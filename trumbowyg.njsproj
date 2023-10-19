@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81b7c21f-459b-4095-af27-4e7da85e770b}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="banner.jpg" />
+    <Content Include="bower.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="BACKERS.md" />
+    <Content Include="CONTRIBUTORS.md" />
+    <Content Include="README.md" />
+    <Content Include="docs\humans.txt" />
+    <Content Include="docs\robots.txt" />
+    <Content Include="docs\documentation.html" />
+    <Content Include="docs\index.html" />
+    <Content Include="docs\favicon.png" />
+    <Content Include="docs\package.json" />
+    <Content Include="sponsors\socialoptic.png" />
+    <Content Include="sponsors\avot.svg" />
+    <Content Include="src\trumbowyg.js" />
+    <Content Include="docs\css\main.css" />
+    <Content Include="docs\demos\index.html" />
+    <Content Include="docs\documentation\index.html" />
+    <Content Include="docs\img\beer.svg" />
+    <Content Include="docs\img\globe.svg" />
+    <Content Include="docs\img\introduction-customizable.svg" />
+    <Content Include="docs\img\introduction-html.svg" />
+    <Content Include="docs\img\introduction-lightweight.svg" />
+    <Content Include="docs\img\logo-doc.svg" />
+    <Content Include="docs\img\logo.svg" />
+    <Content Include="docs\js\main.js" />
+    <Content Include="docs\demos\core\dark-theme.html" />
+    <Content Include="docs\demos\core\default.html" />
+    <Content Include="docs\demos\core\simple.html" />
+    <Content Include="docs\demos\js\highlight.js" />
+    <Content Include="docs\demos\js\loader.js" />
+    <Content Include="docs\demos\js\runExampleCode.js" />
+    <Content Include="docs\demos\plugins\allowtagsfrompaste.html" />
+    <Content Include="docs\demos\plugins\base64.html" />
+    <Content Include="docs\demos\plugins\cleanpaste.html" />
+    <Content Include="docs\demos\plugins\colors.html" />
+    <Content Include="docs\demos\plugins\emoji.html" />
+    <Content Include="docs\demos\plugins\fontfamily.html" />
+    <Content Include="docs\demos\plugins\fontsize.html" />
+    <Content Include="docs\demos\plugins\giphy.html" />
+    <Content Include="docs\demos\plugins\highlight.html" />
+    <Content Include="docs\demos\plugins\history.html" />
+    <Content Include="docs\demos\plugins\indent.html" />
+    <Content Include="docs\demos\plugins\insertaudio.html" />
+    <Content Include="docs\demos\plugins\lineheight.html" />
+    <Content Include="docs\demos\plugins\mathml.html" />
+    <Content Include="docs\demos\plugins\mention.html" />
+    <Content Include="docs\demos\plugins\noembed.html" />
+    <Content Include="docs\demos\plugins\pasteembed.html" />
+    <Content Include="docs\demos\plugins\pasteimage.html" />
+    <Content Include="docs\demos\plugins\preformatted.html" />
+    <Content Include="docs\demos\plugins\resizimg.html" />
+    <Content Include="docs\demos\plugins\ruby.html" />
+    <Content Include="docs\demos\plugins\specialchars.html" />
+    <Content Include="docs\demos\plugins\table.html" />
+    <Content Include="docs\demos\plugins\template.html" />
+    <Content Include="docs\demos\plugins\upload.html" />
+    <Content Include="docs\documentation\core\index.html" />
+    <Content Include="docs\documentation\plugins\index.html" />
+    <Content Include="docs\js\vendor\highlight.js" />
+    <Content Include="docs\js\vendor\jquery-3.3.1.min.js" />
+    <Content Include="plugins\allowtagsfrompaste\trumbowyg.allowtagsfrompaste.js" />
+    <Content Include="plugins\base64\trumbowyg.base64.js" />
+    <Content Include="plugins\cleanpaste\trumbowyg.cleanpaste.js" />
+    <Content Include="plugins\colors\trumbowyg.colors.js" />
+    <Content Include="plugins\emoji\trumbowyg.emoji.js" />
+    <Content Include="plugins\fontfamily\trumbowyg.fontfamily.js" />
+    <Content Include="plugins\fontsize\trumbowyg.fontsize.js" />
+    <Content Include="plugins\giphy\trumbowyg.giphy.js" />
+    <Content Include="plugins\highlight\trumbowyg.highlight.js" />
+    <Content Include="plugins\history\trumbowyg.history.js" />
+    <Content Include="plugins\indent\trumbowyg.indent.js" />
+    <Content Include="plugins\insertaudio\trumbowyg.insertaudio.js" />
+    <Content Include="plugins\lineheight\trumbowyg.lineheight.js" />
+    <Content Include="plugins\mathml\trumbowyg.mathml.js" />
+    <Content Include="plugins\mention\trumbowyg.mention.js" />
+    <Content Include="plugins\noembed\trumbowyg.noembed.js" />
+    <Content Include="plugins\pasteembed\trumbowyg.pasteembed.js" />
+    <Content Include="plugins\pasteimage\trumbowyg.pasteimage.js" />
+    <Content Include="plugins\preformatted\trumbowyg.preformatted.js" />
+    <Content Include="plugins\resizimg\trumbowyg.resizimg.js" />
+    <Content Include="plugins\ruby\trumbowyg.ruby.js" />
+    <Content Include="plugins\specialchars\trumbowyg.specialchars.js" />
+    <Content Include="plugins\table\trumbowyg.table.js" />
+    <Content Include="plugins\template\trumbowyg.template.js" />
+    <Content Include="plugins\upload\trumbowyg.upload.js" />
+    <Content Include="plugins\base64\ui\icons\base64.svg" />
+    <Content Include="plugins\colors\ui\icons\back-color.svg" />
+    <Content Include="plugins\colors\ui\icons\fore-color.svg" />
+    <Content Include="plugins\emoji\ui\icons\emoji.svg" />
+    <Content Include="plugins\fontsize\ui\icons\fontsize.svg" />
+    <Content Include="plugins\giphy\ui\icons\giphy.svg" />
+    <Content Include="plugins\highlight\ui\icons\highlight.svg" />
+    <Content Include="plugins\indent\ui\icons\indent.svg" />
+    <Content Include="plugins\indent\ui\icons\outdent.svg" />
+    <Content Include="plugins\insertaudio\ui\icons\insert-audio.svg" />
+    <Content Include="plugins\lineheight\ui\icons\lineheight.svg" />
+    <Content Include="plugins\mathml\ui\icons\mathml.svg" />
+    <Content Include="plugins\mention\ui\icons\mention.svg" />
+    <Content Include="plugins\noembed\ui\icons\noembed.svg" />
+    <Content Include="plugins\preformatted\ui\icons\preformatted.svg" />
+    <Content Include="plugins\ruby\ui\icons\ruby.svg" />
+    <Content Include="plugins\specialchars\ui\icons\special-chars.svg" />
+    <Content Include="plugins\table\ui\icons\align-bottom.svg" />
+    <Content Include="plugins\table\ui\icons\align-middle.svg" />
+    <Content Include="plugins\table\ui\icons\align-top.svg" />
+    <Content Include="plugins\table\ui\icons\col-delete.svg" />
+    <Content Include="plugins\table\ui\icons\col-left.svg" />
+    <Content Include="plugins\table\ui\icons\col-right.svg" />
+    <Content Include="plugins\table\ui\icons\header-row.svg" />
+    <Content Include="plugins\table\ui\icons\row-above.svg" />
+    <Content Include="plugins\table\ui\icons\row-below.svg" />
+    <Content Include="plugins\table\ui\icons\row-delete.svg" />
+    <Content Include="plugins\table\ui\icons\table-border-color.svg" />
+    <Content Include="plugins\table\ui\icons\table-cell-background-color.svg" />
+    <Content Include="plugins\table\ui\icons\table-delete.svg" />
+    <Content Include="plugins\table\ui\icons\table-merge.svg" />
+    <Content Include="plugins\table\ui\icons\table-unmerge.svg" />
+    <Content Include="plugins\table\ui\icons\table.svg" />
+    <Content Include="plugins\upload\ui\icons\upload.svg" />
+    <Content Include="src\langs\ar.js" />
+    <Content Include="src\langs\az.js" />
+    <Content Include="src\langs\bg.js" />
+    <Content Include="src\langs\bn.js" />
+    <Content Include="src\langs\by.js" />
+    <Content Include="src\langs\ca.js" />
+    <Content Include="src\langs\cs.js" />
+    <Content Include="src\langs\da.js" />
+    <Content Include="src\langs\de.js" />
+    <Content Include="src\langs\el.js" />
+    <Content Include="src\langs\en.js" />
+    <Content Include="src\langs\es.js" />
+    <Content Include="src\langs\es_ar.js" />
+    <Content Include="src\langs\et.js" />
+    <Content Include="src\langs\fa.js" />
+    <Content Include="src\langs\fi.js" />
+    <Content Include="src\langs\fr.js" />
+    <Content Include="src\langs\he.js" />
+    <Content Include="src\langs\hr.js" />
+    <Content Include="src\langs\hu.js" />
+    <Content Include="src\langs\id.js" />
+    <Content Include="src\langs\it.js" />
+    <Content Include="src\langs\ja.js" />
+    <Content Include="src\langs\ko.js" />
+    <Content Include="src\langs\lt.js" />
+    <Content Include="src\langs\mn.js" />
+    <Content Include="src\langs\my.js" />
+    <Content Include="src\langs\nb.js" />
+    <Content Include="src\langs\nl.js" />
+    <Content Include="src\langs\ph.js" />
+    <Content Include="src\langs\pl.js" />
+    <Content Include="src\langs\pt.js" />
+    <Content Include="src\langs\pt_br.js" />
+    <Content Include="src\langs\ro.js" />
+    <Content Include="src\langs\rs.js" />
+    <Content Include="src\langs\rs_latin.js" />
+    <Content Include="src\langs\ru.js" />
+    <Content Include="src\langs\sk.js" />
+    <Content Include="src\langs\sl.js" />
+    <Content Include="src\langs\sq.js" />
+    <Content Include="src\langs\sv.js" />
+    <Content Include="src\langs\th.js" />
+    <Content Include="src\langs\tr.js" />
+    <Content Include="src\langs\ua.js" />
+    <Content Include="src\langs\vi.js" />
+    <Content Include="src\langs\zh_cn.js" />
+    <Content Include="src\langs\zh_tw.js" />
+    <Content Include="src\ui\icons\blockquote.svg" />
+    <Content Include="src\ui\icons\bold.svg" />
+    <Content Include="src\ui\icons\close.svg" />
+    <Content Include="src\ui\icons\create-link.svg" />
+    <Content Include="src\ui\icons\del.svg" />
+    <Content Include="src\ui\icons\em.svg" />
+    <Content Include="src\ui\icons\fullscreen.svg" />
+    <Content Include="src\ui\icons\h1.svg" />
+    <Content Include="src\ui\icons\h2.svg" />
+    <Content Include="src\ui\icons\h3.svg" />
+    <Content Include="src\ui\icons\h4.svg" />
+    <Content Include="src\ui\icons\h5.svg" />
+    <Content Include="src\ui\icons\h6.svg" />
+    <Content Include="src\ui\icons\horizontal-rule.svg" />
+    <Content Include="src\ui\icons\insert-image.svg" />
+    <Content Include="src\ui\icons\italic.svg" />
+    <Content Include="src\ui\icons\justify-center.svg" />
+    <Content Include="src\ui\icons\justify-full.svg" />
+    <Content Include="src\ui\icons\justify-left.svg" />
+    <Content Include="src\ui\icons\justify-right.svg" />
+    <Content Include="src\ui\icons\link.svg" />
+    <Content Include="src\ui\icons\ordered-list.svg" />
+    <Content Include="src\ui\icons\p.svg" />
+    <Content Include="src\ui\icons\redo.svg" />
+    <Content Include="src\ui\icons\removeformat.svg" />
+    <Content Include="src\ui\icons\strikethrough.svg" />
+    <Content Include="src\ui\icons\strong.svg" />
+    <Content Include="src\ui\icons\subscript.svg" />
+    <Content Include="src\ui\icons\superscript.svg" />
+    <Content Include="src\ui\icons\underline.svg" />
+    <Content Include="src\ui\icons\undo.svg" />
+    <Content Include="src\ui\icons\unlink.svg" />
+    <Content Include="src\ui\icons\unordered-list.svg" />
+    <Content Include="src\ui\icons\view-html.svg" />
+    <Content Include="src\ui\sass\trumbowyg.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="docs" />
+    <Folder Include="docs\css" />
+    <Folder Include="docs\demos" />
+    <Folder Include="docs\demos\core" />
+    <Folder Include="docs\demos\js" />
+    <Folder Include="docs\demos\plugins" />
+    <Folder Include="docs\documentation" />
+    <Folder Include="docs\documentation\core" />
+    <Folder Include="docs\documentation\plugins" />
+    <Folder Include="docs\fonts" />
+    <Folder Include="docs\img" />
+    <Folder Include="docs\js" />
+    <Folder Include="docs\js\vendor" />
+    <Folder Include="docs\scss" />
+    <Folder Include="plugins" />
+    <Folder Include="plugins\allowtagsfrompaste" />
+    <Folder Include="plugins\base64" />
+    <Folder Include="plugins\base64\ui" />
+    <Folder Include="plugins\base64\ui\icons" />
+    <Folder Include="plugins\cleanpaste" />
+    <Folder Include="plugins\colors" />
+    <Folder Include="plugins\colors\ui" />
+    <Folder Include="plugins\colors\ui\icons" />
+    <Folder Include="plugins\colors\ui\sass" />
+    <Folder Include="plugins\emoji" />
+    <Folder Include="plugins\emoji\ui" />
+    <Folder Include="plugins\emoji\ui\icons" />
+    <Folder Include="plugins\emoji\ui\sass" />
+    <Folder Include="plugins\fontfamily" />
+    <Folder Include="plugins\fontsize" />
+    <Folder Include="plugins\fontsize\ui" />
+    <Folder Include="plugins\fontsize\ui\icons" />
+    <Folder Include="plugins\giphy" />
+    <Folder Include="plugins\giphy\ui" />
+    <Folder Include="plugins\giphy\ui\icons" />
+    <Folder Include="plugins\giphy\ui\sass" />
+    <Folder Include="plugins\highlight" />
+    <Folder Include="plugins\highlight\ui" />
+    <Folder Include="plugins\highlight\ui\icons" />
+    <Folder Include="plugins\highlight\ui\sass" />
+    <Folder Include="plugins\history" />
+    <Folder Include="plugins\indent" />
+    <Folder Include="plugins\indent\ui" />
+    <Folder Include="plugins\indent\ui\icons" />
+    <Folder Include="plugins\insertaudio" />
+    <Folder Include="plugins\insertaudio\ui" />
+    <Folder Include="plugins\insertaudio\ui\icons" />
+    <Folder Include="plugins\lineheight" />
+    <Folder Include="plugins\lineheight\ui" />
+    <Folder Include="plugins\lineheight\ui\icons" />
+    <Folder Include="plugins\mathml" />
+    <Folder Include="plugins\mathml\ui" />
+    <Folder Include="plugins\mathml\ui\icons" />
+    <Folder Include="plugins\mathml\ui\sass" />
+    <Folder Include="plugins\mention" />
+    <Folder Include="plugins\mention\ui" />
+    <Folder Include="plugins\mention\ui\icons" />
+    <Folder Include="plugins\mention\ui\sass" />
+    <Folder Include="plugins\noembed" />
+    <Folder Include="plugins\noembed\ui" />
+    <Folder Include="plugins\noembed\ui\icons" />
+    <Folder Include="plugins\pasteembed" />
+    <Folder Include="plugins\pasteimage" />
+    <Folder Include="plugins\preformatted" />
+    <Folder Include="plugins\preformatted\ui" />
+    <Folder Include="plugins\preformatted\ui\icons" />
+    <Folder Include="plugins\resizimg" />
+    <Folder Include="plugins\ruby" />
+    <Folder Include="plugins\ruby\ui" />
+    <Folder Include="plugins\ruby\ui\icons" />
+    <Folder Include="plugins\specialchars" />
+    <Folder Include="plugins\specialchars\ui" />
+    <Folder Include="plugins\specialchars\ui\icons" />
+    <Folder Include="plugins\specialchars\ui\sass" />
+    <Folder Include="plugins\table" />
+    <Folder Include="plugins\table\ui" />
+    <Folder Include="plugins\table\ui\icons" />
+    <Folder Include="plugins\table\ui\sass" />
+    <Folder Include="plugins\template" />
+    <Folder Include="plugins\upload" />
+    <Folder Include="plugins\upload\ui" />
+    <Folder Include="plugins\upload\ui\icons" />
+    <Folder Include="sponsors" />
+    <Folder Include="src" />
+    <Folder Include="src\langs" />
+    <Folder Include="src\ui" />
+    <Folder Include="src\ui\icons" />
+    <Folder Include="src\ui\sass" />
+    <Folder Include="trumbowyg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
