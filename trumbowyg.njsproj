@@ -16,6 +16,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="docs\demos\plugins\mathlive.html" />
     <Content Include="index.html" />
     <Content Include="banner.jpg" />
     <Content Include="bower.json" />
@@ -25,7 +26,7 @@
     <Content Include="CONTRIBUTORS.md" />
     <Content Include="plugins\mathlive\ui\icons\mathlive.svg" />
     <Content Include="plugins\mathlive\ui\sass\trumbowyg.mathlive.scss" />
-    <Content Include="plugins\mathlive\ui\trumbowyg.mathlive.js" />
+    <Content Include="plugins\mathlive\trumbowyg.mathlive.js" />
     <Content Include="README.md" />
     <Content Include="docs\humans.txt" />
     <Content Include="docs\robots.txt" />
