@@ -10,6 +10,40 @@
 /* globals MathJax */
 (function ($) {
     'use strict';
+
+    // If the plugin is a button
+    function buildButtonIcon() {
+        if ($("#trumbowyg-mathlive").length > 0) {
+            return;
+        }
+
+        /*
+        When your button is created, an SVG will be inserted with an xref to a
+        symbol living at the fragment "#trumbowyg-myplugin". For Trumbowyg's
+        own plugins, this will come from a sprite sheet which is injected into
+        the document, built from the icon SVG in "ui/icons" in your plugin's
+        source tree. This is how you should organise things if you are
+        proposing your plugin to be included in the Trumbowyg main
+        distribution, or if you are rolling your own custom build of Trumbowyg
+        for your site.
+
+        But, nothing says it *has* to come from Trumbowyg's injected sprite
+        sheet; it only requires that this symbol exists in your document. To
+        allow stand-alone distribution of your plugin, we're going to insert a
+        custom SVG symbol into the document with the correct ID.
+        */
+        const iconWrap = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
+        iconWrap.addClass("trumbowyg-icons");
+
+        // For demonstration purposes, we've taken the "File" icon from
+        // Remix Icon - https://remixicon.com/
+        iconWrap.html(`
+            <symbol id="trumbowyg-mathlive" viewBox="0 0 24 24">
+                 <path d="M426.024 86.447H209.705l-84.911 298.911c-2.568 7.967-9.854 13.482-18.22 13.771-.236 0-.464.006-.688.006a19.868 19.868 0 01-18.436-12.478l-34.714-86.782H19.851C8.884 299.876 0 290.986 0 280.022c0-10.965 8.893-19.854 19.851-19.854H66.18a19.862 19.862 0 0118.436 12.483l19.237 48.09 72.472-260.218a19.855 19.855 0 0118.903-13.781h230.798c10.97 0 19.854 8.89 19.854 19.851s-8.892 19.854-19.856 19.854zm10.699 266.78l-78.259-87.904 74.576-82.783c1.318-1.454 1.638-3.547.857-5.341a4.977 4.977 0 00-4.54-2.946h-47.18a4.995 4.995 0 00-3.759 1.72l-50.059 58.047-49.674-58.029a4.95 4.95 0 00-3.771-1.738H225.58a4.947 4.947 0 00-4.521 2.929 4.939 4.939 0 00.824 5.332l73.743 82.81-77.641 87.923a4.977 4.977 0 00-.813 5.325 4.978 4.978 0 004.528 2.92h48.9c1.472 0 2.867-.65 3.807-1.785l51.819-62.181 53.05 62.229a4.972 4.972 0 003.782 1.743h49.97a4.938 4.938 0 004.527-2.926 4.966 4.966 0 00-.832-5.345z"/>
+            </symbol>
+        `).appendTo(document.body);
+    }
+
     $.extend(true, $.trumbowyg, {
         langs: {
             // jshint camelcase:false
@@ -298,6 +332,8 @@
                             elem.onclick = openModal;
                         });
                     });
+
+                    buildButtonIcon();
 
                     trumbowyg.addBtnDef('mathlive', btnDef);
                 }
