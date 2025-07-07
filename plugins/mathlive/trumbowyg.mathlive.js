@@ -228,7 +228,7 @@
                                 }).join('');
                                 html += '</select>';
                             } else {
-
+                                debugger;
                                 if (field.inputType === "math"){
                                     html += '<math-field id="' + fieldId + '" name="' + n + '" ' + attr;
                                 } else {
