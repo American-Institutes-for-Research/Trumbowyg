@@ -11,37 +11,38 @@
 (function ($) {
     'use strict';
 
-    //MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
-
     // If the plugin is a button
-    function buildButtonIcon() {
-        debugger;
-        if ($("#trumbowyg-mathlive").length > 0) {
-            return;
-        }
+    //function buildButtonIcon() {
+    //    if ($("#trumbowyg-mathlive").length > 0) {
+    //        return;
+    //    }
 
-        /*
-        When your button is created, an SVG will be inserted with an xref to a
-        symbol living at the fragment "#trumbowyg-myplugin". For Trumbowyg's
-        own plugins, this will come from a sprite sheet which is injected into
-        the document, built from the icon SVG in "ui/icons" in your plugin's
-        source tree. This is how you should organise things if you are
-        proposing your plugin to be included in the Trumbowyg main
-        distribution, or if you are rolling your own custom build of Trumbowyg
-        for your site.
+    //    /*
+    //    When your button is created, an SVG will be inserted with an xref to a
+    //    symbol living at the fragment "#trumbowyg-myplugin". For Trumbowyg's
+    //    own plugins, this will come from a sprite sheet which is injected into
+    //    the document, built from the icon SVG in "ui/icons" in your plugin's
+    //    source tree. This is how you should organise things if you are
+    //    proposing your plugin to be included in the Trumbowyg main
+    //    distribution, or if you are rolling your own custom build of Trumbowyg
+    //    for your site.
 
-        But, nothing says it *has* to come from Trumbowyg's injected sprite
-        sheet; it only requires that this symbol exists in your document. To
-        allow stand-alone distribution of your plugin, we're going to insert a
-        custom SVG symbol into the document with the correct ID.
-        */
-        const iconWrap = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
-        iconWrap.addClass("trumbowyg-icons");
+    //    But, nothing says it *has* to come from Trumbowyg's injected sprite
+    //    sheet; it only requires that this symbol exists in your document. To
+    //    allow stand-alone distribution of your plugin, we're going to insert a
+    //    custom SVG symbol into the document with the correct ID.
+    //    */
+    //    const iconWrap = $(document.createElementNS("http://www.w3.org/2000/svg", "svg"));
+    //    iconWrap.addClass("trumbowyg-icons");
 
-        $(iconWrap).html(`
-        <symbol id="trumbowyg-mathlive" viewBox="0 0 24 24"><path d="M15.382 4H22V6H16.618L9 21.2361L5.38197 14H2V12H6.61803L9 16.7639L15.382 4Z"></path></symbol>
-       `).appendTo("body");
-    }
+    //    // For demonstration purposes, we've taken the "File" icon from
+    //    // Remix Icon - https://remixicon.com/
+    //    iconWrap.html(`
+    //        <symbol id="trumbowyg-mathlive" viewBox="0 0 24 24">
+    //             <path d="M426.024 86.447H209.705l-84.911 298.911c-2.568 7.967-9.854 13.482-18.22 13.771-.236 0-.464.006-.688.006a19.868 19.868 0 01-18.436-12.478l-34.714-86.782H19.851C8.884 299.876 0 290.986 0 280.022c0-10.965 8.893-19.854 19.851-19.854H66.18a19.862 19.862 0 0118.436 12.483l19.237 48.09 72.472-260.218a19.855 19.855 0 0118.903-13.781h230.798c10.97 0 19.854 8.89 19.854 19.851s-8.892 19.854-19.856 19.854zm10.699 266.78l-78.259-87.904 74.576-82.783c1.318-1.454 1.638-3.547.857-5.341a4.977 4.977 0 00-4.54-2.946h-47.18a4.995 4.995 0 00-3.759 1.72l-50.059 58.047-49.674-58.029a4.95 4.95 0 00-3.771-1.738H225.58a4.947 4.947 0 00-4.521 2.929 4.939 4.939 0 00.824 5.332l73.743 82.81-77.641 87.923a4.977 4.977 0 00-.813 5.325 4.978 4.978 0 004.528 2.92h48.9c1.472 0 2.867-.65 3.807-1.785l51.819-62.181 53.05 62.229a4.972 4.972 0 003.782 1.743h49.97a4.938 4.938 0 004.527-2.926 4.966 4.966 0 00-.832-5.345z"/>
+    //        </symbol>
+    //    `).appendTo(document.body);
+    //}
 
     $.extend(true, $.trumbowyg, {
         langs: {
@@ -127,18 +128,18 @@
                 inline: '內嵌'
             },
         },
-    // jshint camelcase:true
+        // jshint camelcase:true
 
         plugins: {
             mathlive: {
                 init: function (trumbowyg) {
-                    var mathMlOptions = {
+                    var mathliveOptions = {
                         formulas: {
                             label: trumbowyg.lang.formulas,
                             required: true,
                             value: '',
                             inputType: 'math',
-                            type: function (field, fieldId, prefix, lg) {
+                            type: function(field, fieldId, prefix, lg) {
                                 var html = '<div class="' + prefix + 'input-row">' +
                                     '<div class="' + prefix + 'input-infos">' +
                                     '<label for="' + fieldId + '">' +
@@ -146,7 +147,7 @@
                                     '</label>' +
                                     '</div>' +
                                     '<div class="' + prefix + 'input-html">' +
-                                    '<math-field type="math-field" style="display: block;">' +
+                                    '<math-field type="math-field">' +
                                     field.value +
                                     '</math-field>' +
                                     '</div>' +
@@ -165,17 +166,22 @@
                         }
                     };
 
-                    //MathJax.Hub.Config({ tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] } });
+                    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
                     var mathmlCallback = function (v) {
-                        var delimiter = v.inline ? '$' : '$$';
+                        /*var delimiter = v.inline ? '$' : '$$';*/
                         if (trumbowyg.currentMathNode) {
-                            $(trumbowyg.currentMathNode)
-                                .html('<math-field type="math-field" style="display: block;">' + v.formulas + '</math-field>')
-                                .attr('formulas', v.formulas)
+                            $(trumbowyg.currentMathNode)    
+                                //.html(delimiter + ' ' + v.formulas + ' ' + delimiter)
+                                .html(v.formulas)
+                                //.attr('formulas', v.formulas)
                                 .attr('inline', (v.inline ? 'true' : 'false'));
                         } else {
-                            var html = '<span contenteditable="false" formulas="' + v.formulas + '" inline="' + (v.inline ? 'true' : 'false') + '" >' + delimiter + ' ' + v.formulas + ' ' + delimiter + '</span>';
+                            //var mlFormulas = MathLive.convertLatexToMathMl(v.formulas);
+
+                            var html = '<math-field read-only style="border-style: unset; ' + (v.inline ? 'position: relative; display: inline-block; pointer-events: none;' : 'display: block; width: 100%;') + '" inline="' + (v.inline ? 'true' : 'false') + '">' + v.formulas + '</math-field>';
+
+                            //var html = '<span contenteditable="false" formulas="' + v.formulas + '" inline="' + (v.inline ? 'true' : 'false') + '" >' + delimiter + ' ' + v.formulas + ' ' + delimiter + '</span>';
                             var node = $(html)[0];
                             node.onclick = openModal;
 
@@ -184,12 +190,9 @@
                         }
 
                         trumbowyg.currentMathNode = false;
-
-                        MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
-
+                        //MathJax.Hub.Queue(['Typeset', MathJax.Hub, node]);
                         return true;
                     };
-
 
                     var openModalInsert = function (title, fields, cmd) {
                         var t = trumbowyg,
@@ -199,6 +202,7 @@
                             idPrefix = prefix + 'form-' + Date.now() + '-';
 
                         $.each(fields, function (fieldName, field) {
+                            debugger;
                             var l = field.label || fieldName,
                                 n = field.name || fieldName,
                                 a = field.attributes || {},
@@ -208,15 +212,15 @@
                                 return prop + '="' + a[prop] + '"';
                             }).join(' ');
 
-                            if (typeof field.type === 'function') {
-                                if (!field.name) {
-                                    field.name = n;
-                                }
+                            //if (typeof field.type === 'function') {
+                            //    if (!field.name) {
+                            //        field.name = n;
+                            //    }
 
-                                html += field.type(field, fieldId, prefix, lg);
+                            //    html += field.type(field, fieldId, prefix, lg);
 
-                                return;
-                            }
+                            //    return;
+                            //}
 
                             html += '<div class="' + prefix + 'input-row">';
                             html += '<div class="' + prefix + 'input-infos"><label for="' + fieldId + '"><span>' + (lg[l] ? lg[l] : l) + '</span></label></div>';
@@ -229,20 +233,23 @@
                                 }).join('');
                                 html += '</select>';
                             } else {
+                                if (field.inputType === "math") {
+                                    debugger;
+                                    html += '<math-field style="width: 100%" id="' + fieldId + '" name="' + n + '" ' + attr + ' value="' + field.value + '">';
+                                    html += field.value;
+                                    html += '</math-field>';
 
-                                if (field.inputType === 'math') {
-                                    html += '<math-field id="' + fieldId + '" name="' + n + '" ' + attr;
                                 } else {
                                     html += '<input id="' + fieldId + '" type="' + (field.type || 'text') + '" name="' + n + '" ' + attr;
+                                    html += (field.type === 'checkbox' && field.value ? ' checked="checked"' : '') + ' value="' + (field.value || '').replace(/"/g, '&quot;') + '">';
                                 }
-                                html += (field.type === 'checkbox' && field.value ? ' checked="checked"' : '') + ' value="' + (field.value || '').replace(/"/g, '&quot;') + '">';
                             }
 
                             html += '</div></div>';
                         });
 
                         return t.openModal(title, html)
-                            .on('tbwconfirm', function (e) {
+                            .on("tbwconfirm", function (e) {
                                 e.preventDefault();
                                 var $form = $('form', $(this)),
                                     valid = true,
@@ -253,7 +260,8 @@
 
                                     var $field = null;
 
-                                    if (field.inputType === 'math') {
+                                    if (field.inputType === "math")
+                                    {
                                         $field = $('math-field', $form);
                                     } else {
                                         $field = $(':input[name="' + n + '"]', $form);
@@ -296,46 +304,54 @@
 
                                 return false;
                             })
-                            .one('tbwcancel', function () {
-                                $(this).off('tbwconfirm');
+                            .one("tbwcancel", function () {
+                                $(this).off("tbwconfirm");
                                 t.closeModal();
                             });
-                    };
+                    }
 
                     var openModal = function () {
                         trumbowyg.currentMathNode = this;
-                        mathMlOptions.formulas.value = $(this).attr('formulas');
+                        mathliveOptions.formulas.value = this.innerHTML;
 
                         if ($(this).attr('inline') === 'true') {
-                            mathMlOptions.inline.attributes.checked = true;
+                            mathliveOptions.inline.attributes.checked = true;
                         } else {
-                            delete mathMlOptions.inline.attributes.checked;
+                            delete mathliveOptions.inline.attributes.checked;
                         }
 
-                        //trumbowyg.openModalInsert(trumbowyg.lang.mathml, mathMlOptions, mathmlCallback);
-                        openModalInsert(trumbowyg.lang.mathml, mathMlOptions, mathmlCallback);
+                        openModalInsert(trumbowyg.lang.mathml, mathliveOptions, mathmlCallback);
                     };
 
                     var btnDef = {
                         fn: function () {
                             trumbowyg.saveRange();
 
-                            mathMlOptions.formulas.value = trumbowyg.getRangeText();
-                            mathMlOptions.inline.attributes.checked = true;
-                            //trumbowyg.openModalInsert(trumbowyg.lang.mathml, mathMlOptions, mathmlCallback);
-                            openModalInsert(trumbowyg.lang.mathml, mathMlOptions, mathmlCallback);
+                            mathliveOptions.formulas.value = trumbowyg.getRangeText();
+                            mathliveOptions.inline.attributes.checked = true;
+                            openModalInsert(trumbowyg.lang.mathml, mathliveOptions, mathmlCallback);
                         }
                     };
 
-                    trumbowyg.$ta.on('tbwinit', function () {
-                        var nodes = trumbowyg.$ed.find('[formulas]');
+                    function registerMathFieldClickHandlers() {
+                        var nodes = trumbowyg.$ed.find('math-field');
 
                         nodes.each(function (i, elem) {
                             elem.onclick = openModal;
                         });
+                    }
+
+                    trumbowyg.$ta.on('tbwinit', function () {
+                        registerMathFieldClickHandlers();
                     });
 
-                    buildButtonIcon();
+
+                    trumbowyg.$ta.on('tbwchange', function () {
+                        registerMathFieldClickHandlers();
+                    });
+
+
+                    //buildButtonIcon();
 
                     trumbowyg.addBtnDef('mathlive', btnDef);
                 }
