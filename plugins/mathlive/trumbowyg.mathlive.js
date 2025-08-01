@@ -15,7 +15,7 @@
 
     // If the plugin is a button
     function buildButtonIcon() {
-        debugger;
+        
         if ($("#trumbowyg-mathlive").length > 0) {
             return;
         }
@@ -165,17 +165,14 @@
                         }
                     };
 
-                    //MathJax.Hub.Config({ tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] } });
-
                     var mathmlCallback = function (v) {
-                        var delimiter = v.inline ? '$' : '$$';
                         if (trumbowyg.currentMathNode) {
                             $(trumbowyg.currentMathNode)
-                                .html('<math-field type="math-field" style="display: block;">' + v.formulas + '</math-field>')
-                                .attr('formulas', v.formulas)
+                                .html('<math-field read-only type="math-field" style="display: block;">' + v.formulas + '</math-field>')
+                                .attr('math-formulas', v.formulas)
                                 .attr('inline', (v.inline ? 'true' : 'false'));
                         } else {
-                            var html = '<span contenteditable="false" formulas="' + v.formulas + '" inline="' + (v.inline ? 'true' : 'false') + '" >' + delimiter + ' ' + v.formulas + ' ' + delimiter + '</span>';
+                            var html = '<span contenteditable="false" math-formulas="' + v.formulas + '" inline="' + (v.inline ? 'true' : 'false') + '" ><math-field type="math-field" read-only style="display: block;">' + v.formulas + '</math-field></span>';
                             var node = $(html)[0];
                             node.onclick = openModal;
 
@@ -185,11 +182,10 @@
 
                         trumbowyg.currentMathNode = false;
 
-                        MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+                        MathLive.renderMathInDocument();
 
                         return true;
                     };
-
 
                     var openModalInsert = function (title, fields, cmd) {
                         var t = trumbowyg,
@@ -304,7 +300,7 @@
 
                     var openModal = function () {
                         trumbowyg.currentMathNode = this;
-                        mathMlOptions.formulas.value = $(this).attr('formulas');
+                        mathMlOptions.formulas.value = $(this).attr('math-formulas');
 
                         if ($(this).attr('inline') === 'true') {
                             mathMlOptions.inline.attributes.checked = true;
@@ -328,7 +324,7 @@
                     };
 
                     trumbowyg.$ta.on('tbwinit', function () {
-                        var nodes = trumbowyg.$ed.find('[formulas]');
+                        var nodes = trumbowyg.$ed.find('[math-formulas]');
 
                         nodes.each(function (i, elem) {
                             elem.onclick = openModal;
